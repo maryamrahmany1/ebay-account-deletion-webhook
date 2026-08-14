@@ -68,3 +68,31 @@ def privacy():
     </body>
     </html>
     """, 200
+@app.get("/oauth/accepted")
+def oauth_accepted():
+    return """
+    <!doctype html>
+    <html>
+    <head><title>eBay Authorization Successful</title></head>
+    <body style="font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto;">
+        <h1>eBay Authorization Successful</h1>
+        <p>Maryam Resale Agent has been authorized to connect to your eBay account.</p>
+        <p>You may now return to Maryam Resale Agent.</p>
+    </body>
+    </html>
+    """, 200
+
+
+@app.get("/oauth/declined")
+def oauth_declined():
+    return """
+    <!doctype html>
+    <html>
+    <head><title>eBay Authorization Declined</title></head>
+    <body style="font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto;">
+        <h1>eBay Authorization Declined</h1>
+        <p>Authorization was not granted to Maryam Resale Agent.</p>
+        <p>No changes were made to your eBay account.</p>
+    </body>
+    </html>
+    """, 200
