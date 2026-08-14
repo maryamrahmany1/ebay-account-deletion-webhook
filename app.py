@@ -37,3 +37,34 @@ def ebay_notification():
     # before this endpoint is considered fully production-complete.
     request.get_json(silent=True)
     return "", 204
+@app.get("/privacy")
+def privacy():
+    return """
+    <!doctype html>
+    <html>
+    <head>
+        <title>Maryam Resale Agent - Privacy Policy</title>
+    </head>
+    <body style="font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6;">
+        <h1>Privacy Policy</h1>
+        <p><strong>Maryam Resale Agent</strong></p>
+
+        <p>Maryam Resale Agent uses information authorized through eBay
+        to provide resale and listing-related functionality.</p>
+
+        <p>Information obtained through eBay is used only as necessary
+        to operate the application and provide its services.</p>
+
+        <p>Maryam Resale Agent does not sell personal information.</p>
+
+        <p>Data may be processed or stored only as necessary to operate,
+        maintain, secure, and improve the application and to comply with
+        applicable requirements.</p>
+
+        <p>Users may revoke the application's access to their eBay
+        account through their eBay account settings.</p>
+
+        <p>Last updated: August 2026</p>
+    </body>
+    </html>
+    """, 200
