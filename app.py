@@ -11,7 +11,7 @@ def health():
     return jsonify({"status": "ok"}), 200
 
 
-@app.get("/ebay/account-deletion")
+@app.get("/marketplace/account-deletion")
 def ebay_challenge():
     challenge_code = request.args.get("challenge_code", "")
     verification_token = os.environ.get("EBAY_VERIFICATION_TOKEN", "")
@@ -30,7 +30,7 @@ def ebay_challenge():
     return jsonify({"challengeResponse": challenge_response}), 200
 
 
-@app.post("/ebay/account-deletion")
+@app.post("/marketplace/account-deletion")
 def ebay_notification():
     # Acknowledge receipt promptly.
     # Notification verification/deletion processing will be added
